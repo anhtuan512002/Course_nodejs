@@ -8,8 +8,8 @@ const newsController = require('../app/controllers/NewsController'); // Change t
 // ví dụ:
 //router.use('/', newsController.index);  nó sẽ chạy lênh này trước nên sẽ không truy cập vào file đuôi được
 //router.use('/:slug', newsController.show); sẽ không thưc hiện được
-router.use('/:slug', newsController.show); 
-router.use('/', newsController.index); 
+router.get('/:slug', newsController.show); 
+router.get('/', newsController.index); 
 
 
 module.exports = router;
