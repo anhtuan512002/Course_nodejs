@@ -1,19 +1,24 @@
-Xây dựng trang web sử dụng NodeJS & ExpressJS để tạo nên một trang khóa học có các chức năng là tạo khóa học, xóa khóa học, chỉnh sửa thông tin khóa học.
+# Course Node.js Application
 
+This repository contains the source code for a Node.js application focused on course management.
+
+## Directory Structure
+
+```bash
 /course_nodejs
     ├── src
     │   ├── app
-    │   │   ├── controllers
+    │   │   ├── controllers          # Contains all application controllers
     │   │   │   ├── CourseController.js
     │   │   │   ├── MeController.js
     │   │   │   ├── NewsController.js
     │   │   │   └── SiteController.js
-    │   │   └── models
+    │   │   └── models              # Contains all application models
     │   │       └── Course.js
     │   ├── config
     │   │   └── db
-    │   │       └── index.js
-    │   ├── public
+    │   │       └── index.js         # Database configuration
+    │   ├── public                  # Public assets
     │   │   ├── css
     │   │   │   └── app.css
     │   │   └── img
@@ -21,7 +26,7 @@ Xây dựng trang web sử dụng NodeJS & ExpressJS để tạo nên một tran
     │       ├── scss
     │       │   ├── _variables.scss
     │       │   └── app.scss
-    │       └── views
+    │       └── views              # Handlebars view templates
     │           ├── courses
     │           │   ├── create.hbs
     │           │   ├── edit.hbs
@@ -37,12 +42,12 @@ Xây dựng trang web sử dụng NodeJS & ExpressJS để tạo nên một tran
     │           ├── home.hbs
     │           ├── news.hbs
     │           ├── search.hbs
-    ├── routes
+    ├── routes                     # Application routes
     │   ├── courses.js
     │   ├── index.js
     │   ├── me.js
     │   ├── news.js
     │   └── site.js
     ├── util
-    │   └── mongoose.js
-    └── index.js
+    │   └── mongoose.js            # Mongoose utility functions
+    └── index.js                  # Application entry point
