@@ -1,42 +1,41 @@
 # Ứng dụng Node.js quản lý khóa học
 
-Sử dụng NodeJS và ExpresJS để tạo ra một trang khóa học gồm có các chức năng như tạo mới, xóa, cập nhập các khóa học mới.
+This is a Node.js application for managing courses that allows creating, deleting, and updating courses. The application uses NodeJS and ExpressJS to create a course management website.
 
-Một dự án ứng dụng Node.js với các thư viện sau đã được cài đặt:
+## Dependent libraries
 
-## Các thư viện phụ thuộc (dependencies)
+1. [express@4.18.3](https://github.com/expressjs/express): Framework for building web applications with Node.js.
+2. [express-handlebars@7.1.2](https://github.com/ericf/express-handlebars): Middleware to integrate Handlebars with Express.js.
+3. [method-override@3.0.0](https://github.com/expressjs/method-override): Middleware to allow the use of HTTP methods other than GET and POST.
+4. [mongoose@8.2.1](https://github.com/Automattic/mongoose): Object Data Modeling (ODM) library for MongoDB and Node.js.
+5. [mongoose-delete@1.0.2](https://github.com/dsanseviero/mongoose-delete): Plugin for Mongoose to delete a document without removing it from the database.
+6. [mongoose-slug-generator@1.0.4](https://github.com/johanhagalund/mongoose-slug-generator): Plugin for Mongoose to generate slugs (static URLs) for documents.
 
-1. [express@4.18.3](https://github.com/expressjs/express): Framework web cho Node.js.
-2. [express-handlebars@7.1.2](https://github.com/ericf/express-handlebars): Middleware để tích hợp Handlebars vào Express.js.
-3. [method-override@3.0.0](https://github.com/expressjs/method-override): Middleware cho phép sử dụng HTTP phương thức khác ngoài GET và POST.
-4. [mongoose@8.2.1](https://github.com/Automattic/mongoose): ODM library cho MongoDB và Node.js.
-5. [mongoose-delete@1.0.2](https://github.com/dsanseviero/mongoose-delete): Plugin cho Mongoose để xóa một tài liệu mà không xóa nó khỏi cơ sở dữ liệu.
-6. [mongoose-slug-generator@1.0.4](https://github.com/johanhagalund/mongoose-slug-generator): Plugin cho Mongoose để tạo slug (URL tĩnh) cho các tài liệu.
+## Dev Dependencies libraries
 
-## Các thư viện phụ thuộc phát triển (devDependencies)
-
-1. [morgan@1.10.0](https://github.com/expressjs/morgan): Middleware để ghi log các yêu cầu HTTP.
-2. [node-sass@9.0.0](https://github.com/sass/node-sass): Biên dịch SASS cho Node.js.
-3. [nodemon@3.1.0](https://github.com/remy/nodemon): Công cụ theo dõi các thay đổi trong mã nguồn và tự động khởi động lại ứng dụng.
+1. [morgan@1.10.0](https://github.com/expressjs/morgan): Middleware for logging HTTP requests.
+2. [node-sass@9.0.0](https://github.com/sass/node-sass): SASS compiler for Node.js.
+3. [nodemon@3.1.0](https://github.com/remy/nodemon): Tool to monitor changes in the code and automatically restart the application.
 
 
-## Cấu trúc thư mục
+## Directory Structure
+
 
 ```bash
 /course_nodejs
     ├── src
     │   ├── app
-    │   │   ├── controllers          # Chứa tất cả các controller (dùng để điều hướng trang)
+    │   │   ├── controllers          # Contains all the controllers (used for routing)
     │   │   │   ├── CourseController.js
     │   │   │   ├── MeController.js
     │   │   │   ├── NewsController.js
     │   │   │   └── SiteController.js
-    │   │   └── models              # sử dụng để kết nối với database Mongodb
+    │   │   └── models              # Used to connect with MongoDB database
     │   │       └── Course.js
     │   ├── config
     │   │   └── db
-    │   │       └── index.js        # Kết nối dữ liệu
-    │   ├── public                  # Tài nguyên
+    │   │       └── index.js        # Database connection
+    │   ├── public                  # Assets
     │   │   ├── css
     │   │   │   └── app.css
     │   │   └── img
@@ -44,28 +43,28 @@ Một dự án ứng dụng Node.js với các thư viện sau đã được cà
     │       ├── scss
     │       │   ├── _variables.scss
     │       │   └── app.scss
-    │       └── views              # Các giao diện Handlebars cho trang web
-    │           ├── courses        # Trang web của khóa học
+    │       └── views              # Handlebars templates for the website
+    │           ├── courses        # Website pages for courses
     │           │   ├── create.hbs
     │           │   ├── edit.hbs
     │           │   ├── show.hbs
-    │           ├── layouts        #giao diện chính
+    │           ├── layouts        #Main layout
     │           |   └── main.hbs
-    │           ├── me             #giao diện cho trang cá nhân
+    │           ├── me             #Layout for personal page
     │           │   ├── stored-courses.hbs
     │           │   └── trash-courses.hbs
-    │           ├── partials       #header và footer
+    │           ├── partials       #Header and footer
     │           │   ├── header.hbs
     │           │   ├── footer.hbs
-    │           ├── home.hbs       #trang home
-    │           ├── news.hbs       #trang news
-    │           ├── search.hbs     #trang tìm kiếm
-    ├── routes                     # Các tuyến đường của ứng dụng
+    │           ├── home.hbs       #Home page
+    │           ├── news.hbs       #News page
+    │           ├── search.hbs     
+    ├── routes                     # Application routes
     │   ├── courses.js
     │   ├── index.js
     │   ├── me.js
     │   ├── news.js
     │   └── site.js
     ├── util
-    │   └── mongoose.js           # Hàm dùng để kết nối với Mongoose
-    └── index.js                  # index vào trong ứng dụng
+    │   └── mongoose.js           # Function to connect with Mongoose
+    └── index.js                  # Application entry point
