@@ -46,5 +46,3 @@ Xây dựng trang web sử dụng NodeJS & ExpressJS để tạo nên một tran
     ├── util
     │   └── mongoose.js
     └── index.js
-
-
