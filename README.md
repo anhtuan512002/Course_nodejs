@@ -35,7 +35,7 @@ Một dự án ứng dụng Node.js với các thư viện sau đã được cà
     │   │       └── Course.js
     │   ├── config
     │   │   └── db
-    │   │       └── index.js        # Cấu hình cơ sở dữ liệu
+    │   │       └── index.js        # Kết nối dữ liệu
     │   ├── public                  # Tài nguyên
     │   │   ├── css
     │   │   │   └── app.css
