@@ -31,11 +31,11 @@ Một dự án ứng dụng Node.js với các thư viện sau đã được cà
     │   │   │   ├── MeController.js
     │   │   │   ├── NewsController.js
     │   │   │   └── SiteController.js
-    │   │   └── models              # Chứa tất cả các mô hình của ứng dụng (sử dụng Mongodb)
+    │   │   └── models              # sử dụng để kết nối với database Mongodb
     │   │       └── Course.js
     │   ├── config
     │   │   └── db
-    │   │       └── index.js         # Cấu hình cơ sở dữ liệu
+    │   │       └── index.js        # Cấu hình cơ sở dữ liệu
     │   ├── public                  # Tài nguyên
     │   │   ├── css
     │   │   │   └── app.css
