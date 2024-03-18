@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const sitesController = require('../app/controllers/SitesController'); // Change the import statement to use the correct casing
+const siteController = require('../app/controllers/SiteController');
 
-router.get('/search', sitesController.search); 
-router.get('/', sitesController.home); 
-
+router.get('/search', siteController.search);
+router.get('/', siteController.index);
 
 module.exports = router;
